@@ -68,6 +68,9 @@
                                                     <constraint firstAttribute="width" constant="51" id="yqc-vD-0JR"/>
                                                 </constraints>
                                                 <state key="normal" image="7"/>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YeG-Qg-qfR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNF-0d-wk4" userLabel="Keypad 8">
                                                 <rect key="frame" x="66" y="0.0" width="50" height="50"/>
@@ -76,6 +79,9 @@
                                                     <constraint firstAttribute="height" constant="51" id="qdd-AO-uVg"/>
                                                 </constraints>
                                                 <state key="normal" image="8"/>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rEb-Ar-M55"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlR-su-FZ2" userLabel="Keypad 9">
                                                 <rect key="frame" x="131" y="0.0" width="50" height="50"/>
@@ -84,6 +90,9 @@
                                                     <constraint firstAttribute="height" constant="51" id="kyS-cj-7wz"/>
                                                 </constraints>
                                                 <state key="normal" image="9"/>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="raV-mP-s4C"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -97,6 +106,9 @@
                                                     <constraint firstAttribute="width" constant="51" id="maf-rt-rAa"/>
                                                 </constraints>
                                                 <state key="normal" image="4"/>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rRC-7g-Dpb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k07-8Q-urx" userLabel="Keypad 5">
                                                 <rect key="frame" x="66" y="0.0" width="50" height="50"/>
@@ -105,6 +117,9 @@
                                                     <constraint firstAttribute="width" constant="50" id="q3z-ES-deO"/>
                                                 </constraints>
                                                 <state key="normal" image="5"/>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iVh-gg-3C7"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svq-lD-vhd" userLabel="Keypad 6">
                                                 <rect key="frame" x="131" y="0.0" width="50" height="50"/>
@@ -113,6 +128,9 @@
                                                     <constraint firstAttribute="height" constant="51" id="WLg-k2-8jS"/>
                                                 </constraints>
                                                 <state key="normal" image="6"/>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cRL-bd-3Tw"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

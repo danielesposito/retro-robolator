@@ -16,8 +16,7 @@ class ViewController: UIViewController {
     
     //Properties
     var btnSound: AVAudioPlayer!
-    
-    
+    var tmpCalcNumber = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,24 +51,63 @@ class ViewController: UIViewController {
         switch btn.tag {
         case 0:
             showSelectedNumberMessage(btn.tag)
+            addNumberString(btn.tag)
         case 1:
             showSelectedNumberMessage(btn.tag)
+            addNumberString(btn.tag)
         case 2:
             showSelectedNumberMessage(btn.tag)
+            addNumberString(btn.tag)
         case 3:
             showSelectedNumberMessage(btn.tag)
+            addNumberString(btn.tag)
+        case 4:
+            showSelectedNumberMessage(btn.tag)
+            addNumberString(btn.tag)
+        case 5:
+            showSelectedNumberMessage(btn.tag)
+            addNumberString(btn.tag)
+        case 6:
+            showSelectedNumberMessage(btn.tag)
+            addNumberString(btn.tag)
+        case 7:
+            showSelectedNumberMessage(btn.tag)
+            addNumberString(btn.tag)
+        case 8:
+            showSelectedNumberMessage(btn.tag)
+            addNumberString(btn.tag)
+        case 9:
+            showSelectedNumberMessage(btn.tag)
+            addNumberString(btn.tag)
 
         default: break
             
         }
         
-        
     }
     
 
     func showSelectedNumberMessage(theTag: Int) {
-        
         print("We selected Key \(theTag)")
     }
+    
+    
+    func addNumberString(keypadNumber: Int) {
+        
+        var strKeypad = 0
+        
+        strKeypad += keypadNumber
+        
+        if ledOutputLabel.text!.hasPrefix("0") && ledOutputLabel.text!.characters.count == 1 {
+            
+            ledOutputLabel.text = ""
+        }
+        
+        ledOutputLabel.text = ledOutputLabel.text! + "\(strKeypad)"
+        
+    }
+    
+ 
+    
 }
 
