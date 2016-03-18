@@ -12,6 +12,8 @@
 		5B6D4DFF1C9A496C00036D98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6D4DFD1C9A496C00036D98 /* Main.storyboard */; };
 		5B6D4E011C9A496C00036D98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6D4E001C9A496C00036D98 /* Assets.xcassets */; };
 		5B6D4E041C9A496C00036D98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6D4E021C9A496C00036D98 /* LaunchScreen.storyboard */; };
+		5B6D4E351C9AED6600036D98 /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B6D4E341C9AED6600036D98 /* Minecraft.ttf */; };
+		5B6D4E371C9BA37A00036D98 /* btn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5B6D4E361C9BA37A00036D98 /* btn.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		5B6D4E001C9A496C00036D98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B6D4E031C9A496C00036D98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B6D4E051C9A496C00036D98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B6D4E341C9AED6600036D98 /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
+		5B6D4E361C9BA37A00036D98 /* btn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btn.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		5B6D4DF81C9A496C00036D98 /* da-robotlator */ = {
 			isa = PBXGroup;
 			children = (
+				5B6D4E341C9AED6600036D98 /* Minecraft.ttf */,
+				5B6D4E361C9BA37A00036D98 /* btn.wav */,
 				5B6D4DF91C9A496C00036D98 /* AppDelegate.swift */,
 				5B6D4DFB1C9A496C00036D98 /* ViewController.swift */,
 				5B6D4DFD1C9A496C00036D98 /* Main.storyboard */,
@@ -122,8 +128,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6D4E371C9BA37A00036D98 /* btn.wav in Resources */,
 				5B6D4E041C9A496C00036D98 /* LaunchScreen.storyboard in Resources */,
 				5B6D4E011C9A496C00036D98 /* Assets.xcassets in Resources */,
+				5B6D4E351C9AED6600036D98 /* Minecraft.ttf in Resources */,
 				5B6D4DFF1C9A496C00036D98 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +259,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gfbkk.da-robotlator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -262,6 +271,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gfbkk.da-robotlator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

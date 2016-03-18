@@ -7,19 +7,69 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
+    
+    //Outlets
+    @IBOutlet weak var ledOutputLabel: UILabel!
+    
+    //Properties
+    var btnSound: AVAudioPlayer!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        ledOutputLabel.text = String(0)
+        
+        let soundPath = NSBundle.mainBundle().pathForResource("btn", ofType: "wav")
+        
+        let soundUrl = NSURL(fileURLWithPath: soundPath!)
+        
+        do {
+            
+           try  btnSound = AVAudioPlayer(contentsOfURL: soundUrl)
+            btnSound.prepareToPlay()
+            
+        } catch let err as NSError {
+            
+            print(err.debugDescription)
+        }
+        
     }
+    
+    
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func numberPressed(btn: UIButton){
+        
+        btnSound.play()
+        
+        switch btn.tag {
+        case 0:
+            showSelectedNumberMessage(btn.tag)
+        case 1:
+            showSelectedNumberMessage(btn.tag)
+        case 2:
+            showSelectedNumberMessage(btn.tag)
+        case 3:
+            showSelectedNumberMessage(btn.tag)
+
+        default: break
+            
+        }
+        
+        
     }
+    
 
-
+    func showSelectedNumberMessage(theTag: Int) {
+        
+        print("We selected Key \(theTag)")
+    }
 }
 
