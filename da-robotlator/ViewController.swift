@@ -61,37 +61,32 @@ class ViewController: UIViewController {
     
     @IBAction func onDividePressed(sender: AnyObject) {
         
-        
         processOperation(Operations.Divide)
-        
-        if leftValStr.characters.count > 0 {
-            
-            print("From Divider Action: \(leftValStr)")
-            
-            ledOutputLabel.text = ""
-
-        }
         
     }
     
     @IBAction func onMultiplyPressed(sender: AnyObject) {
         
         processOperation(Operations.Multiply)
+        
     }
 
     @IBAction func onSubstractPressed(sender: AnyObject) {
         
         processOperation(Operations.Substract)
+        
     }
     
     @IBAction func onAdditionPressed(sender: AnyObject) {
         
         processOperation(Operations.Add)
+        
     }
     
     @IBAction func onEqualPressed(sender: AnyObject) {
         
         processOperation(Operations.Equals)
+        
     }
     
     @IBAction func clearLedLabelPressed(btn: UIButton) {
@@ -103,45 +98,19 @@ class ViewController: UIViewController {
     @IBAction func numberPressed(btn: UIButton){
         
         playSound()
+
+        if ledOutputLabel.text!.hasPrefix("0") && btn.tag == 0 {
+            
+            ledOutputLabel.text = "0"
+            
+            
+        } else {
         
-//        switch btn.tag {
-//        case 0:
-//            showSelectedNumberMessage(btn.tag)
-//            addNumberString(btn.tag)
-//        case 1:
-//            showSelectedNumberMessage(btn.tag)
-//            addNumberString(btn.tag)
-//        case 2:
-//            showSelectedNumberMessage(btn.tag)
-//            addNumberString(btn.tag)
-//        case 3:
-//            showSelectedNumberMessage(btn.tag)
-//            addNumberString(btn.tag)
-//        case 4:
-//            showSelectedNumberMessage(btn.tag)
-//            addNumberString(btn.tag)
-//        case 5:
-//            showSelectedNumberMessage(btn.tag)
-//            addNumberString(btn.tag)
-//        case 6:
-//            showSelectedNumberMessage(btn.tag)
-//            addNumberString(btn.tag)
-//        case 7:
-//            showSelectedNumberMessage(btn.tag)
-//            addNumberString(btn.tag)
-//        case 8:
-//            showSelectedNumberMessage(btn.tag)
-//            addNumberString(btn.tag)
-//        case 9:
-//            showSelectedNumberMessage(btn.tag)
-//            addNumberString(btn.tag)
-//
-//        default: break
-//            
-//        }
+            runningNumber += "\(btn.tag)"
         
-        addNumberString(btn.tag)
-        
+            ledOutputLabel.text = runningNumber
+            
+        }
     }
     
 
@@ -167,15 +136,23 @@ class ViewController: UIViewController {
         
         leftValStr = ledOutputLabel.text!
         
-        print("LeftValeString: \(leftValStr)")
-        
-        
     }
     
     func processOperation(op: Operations) {
         
         playSound()
         
+        if currentOperation != Operations.Empty {
+            
+            //Run some Math
+            
+        } else {
+            
+            leftValStr = runningNumber
+            runningNumber = ""
+            currentOperation = op
+        }
+            print("LeftValeString: \(leftValStr)")
     }
  
     func playSound() {
@@ -186,6 +163,12 @@ class ViewController: UIViewController {
         }
         
         btnSound.play()
+    }
+
+    
+    func printPerformedAction(action: String, value: Int) {
+        
+        print("From \(action) Button Pressed. Left Value = \(value)")
     }
     
 }
