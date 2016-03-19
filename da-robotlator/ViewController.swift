@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         case Add = "+"
 //        case Equals = "="
         case Empty = "Empty"
+        case Clear = "Clear"
         
     }
     
@@ -83,6 +84,19 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func clearButtonPressed(sender: AnyObject) {
+        
+//        processOperation(Operations.Clear)
+        
+        leftValStr = ""
+        rightValStr = ""
+        runningNumber = ""
+        resultNumber = ""
+        ledOutputLabel.text = "0"
+        currentOperation = Operations.Empty
+
+    }
+    
     @IBAction func onEqualPressed(sender: AnyObject) {
         
         processOperation(currentOperation)
@@ -120,7 +134,9 @@ class ViewController: UIViewController {
                 } else if currentOperation == Operations.Add {
                     
                     resultNumber = "\(Double(leftValStr)! + Double(rightValStr)!)"
+                
                 }
+                
                 
                 leftValStr = resultNumber
                 
@@ -128,9 +144,10 @@ class ViewController: UIViewController {
             }
             
             currentOperation = op
+                
             
         } else {
-            
+    
             leftValStr = runningNumber
             runningNumber = ""
             currentOperation = op
