@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         case Multiply = "*"
         case Substract = "-"
         case Add = "+"
-//        case Equals = "="
+        case Equals = "="
         case Empty = "Empty"
         case Clear = "Clear"
         
@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     var rightValStr = ""
     var resultNumber = ""
     var currentOperation: Operations = Operations.Empty
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,18 +89,22 @@ class ViewController: UIViewController {
         
 //        processOperation(Operations.Clear)
         
-        leftValStr = ""
-        rightValStr = ""
-        runningNumber = ""
-        resultNumber = ""
-        ledOutputLabel.text = "0"
         currentOperation = Operations.Empty
-
+        
+        leftValStr = ""
+        
+        rightValStr = ""
+        
+        runningNumber = ""
+        
+        resultNumber = ""
+        
+        ledOutputLabel.text = "0"
     }
     
     @IBAction func onEqualPressed(sender: AnyObject) {
-        
-        processOperation(currentOperation)
+
+        processOperation(Operations.Equals)
         
     }
     
@@ -108,7 +113,8 @@ class ViewController: UIViewController {
         
         playSound()
         
-        if currentOperation != Operations.Empty {
+
+        if currentOperation != Operations.Empty && currentOperation != Operations.Clear && leftValStr != "" {
             
             // Check if runninNumber is not empty
             // We check if a user selected an operator, but than selected another
@@ -135,6 +141,10 @@ class ViewController: UIViewController {
                     
                     resultNumber = "\(Double(leftValStr)! + Double(rightValStr)!)"
                 
+                } else if currentOperation == Operations.Equals {
+                    
+                        ledOutputLabel.text = runningNumber
+
                 }
                 
                 
@@ -154,8 +164,11 @@ class ViewController: UIViewController {
         }
         
         
+        print("Left:\(leftValStr)")
+        print("Right: \(rightValStr)")
+        print("Result: \(resultNumber)")
         
-        print("LeftValeString: \(leftValStr)")
+//        print("LeftValeString: \(leftValStr)")
     }
     
     func playSound() {
@@ -168,19 +181,18 @@ class ViewController: UIViewController {
         btnSound.play()
     }
     
-    @IBAction func clearLedLabelPressed(btn: UIButton) {
-        
-        ledOutputLabel.text = "0"
-    }
-    
-    
+ 
     @IBAction func numberPressed(btn: UIButton){
         
         playSound()
-
-        if ledOutputLabel.text!.hasPrefix("0") && btn.tag == 0 {
+        
+        if ledOutputLabel.text!.hasPrefix("0") && btn.tag == 0 && ledOutputLabel.text!.characters.count == 1 {
             
             ledOutputLabel.text = "0"
+        
+            
+        } else if btn.tag == 20 {
+         
             
             
         } else {
@@ -190,6 +202,8 @@ class ViewController: UIViewController {
             ledOutputLabel.text = runningNumber
             
         }
+        
+
     }
     
 
